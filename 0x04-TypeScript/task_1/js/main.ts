@@ -21,32 +21,44 @@ interface printTeacherFunction {
 
 // Define the function (NOT anonymous, NO destructuring)
 function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+  return `${firstName[0]}. ${lastName}`;
 }
 
 // Example usage
 const teacherName: printTeacherFunction = printTeacher;
 console.log(teacherName("John", "Doe")); // J. Doe
-// let printTeacher2: printTeacherFunction;
-// printTeacher2 = function(firstName: string, lastName: string): string {
-//     return `${firstName.charAt(0)}. ${lastName}`;
-//     }
-// console.log(printTeacher("John", "Doe"));
-// console.log(printTeacher2("Jane", "Smith"));
-// const teacher: Teacher = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     fullTimeEmployee: true,
-//     location: "New York",
-//     contract: false
-// };
-// console.log(teacher);
-// const director: Directors = {
-//     firstName: "Jane",
-//     lastName: "Smith",
-//     fullTimeEmployee: true,
-//     location: "Los Angeles",
-//     numberOfReports: 5
-// };
-// console.log(director);
-// export { printTeacher, Teacher, Directors, printTeacherFunction };
+
+class StudentClass {
+    private _firstName: string;
+    private _lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this._firstName = firstName;
+        this._lastName = lastName;
+    }
+
+    // Getter for firstName
+    get firstName(): string {
+        return this._firstName;
+    }
+
+    // Getter for lastName
+    get lastName(): string {
+        return this._lastName;
+    }
+
+    // Method to work on homework
+    workOnHomework(): string {
+        return "Currently working";
+    }
+
+    // Method to display the name
+    displayName(): string {
+        return this._firstName;
+    }
+}
+// Example usage
+const student = new StudentClass("Jane", "Doe");
+console.log(student.displayName()); // Jane
+console.log(student.workOnHomework()); // Currently working
+export { printTeacher, StudentClass, Teacher, Directors, printTeacherFunction };
