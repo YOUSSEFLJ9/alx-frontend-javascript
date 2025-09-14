@@ -54,7 +54,7 @@ class StudentClass {
 
     // Method to display the name
     displayName(): string {
-        return this.firstName;
+        return this._firstName;
     }
 }
 // Example usage
