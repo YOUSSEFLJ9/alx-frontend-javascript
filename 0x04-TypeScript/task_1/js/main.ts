@@ -15,7 +15,7 @@ interface printTeacherFunction {
     (firstName: string, lastName: string): string;    
 }
 //function printTeacher
-function printTeacher(firstName, lastName) {
+function printTeacher({firstName, lastName}: {firstName: string, lastName: string}): string {
   var f = firstName.charAt(0)+'. '+ lastName;
     return f;
 }
