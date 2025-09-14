@@ -1,1 +1,1 @@
-# alx-frontend-javascript
+getting started with typescript and using interfaces
