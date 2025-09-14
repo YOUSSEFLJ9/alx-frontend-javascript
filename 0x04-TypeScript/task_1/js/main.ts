@@ -15,33 +15,38 @@ interface printTeacherFunction {
     (firstName: string, lastName: string): string;    
 }
 //function printTeacher
-function printTeacher({firstName, lastName}: {firstName: string, lastName: string}): string {
-  var f = firstName.charAt(0)+'. '+ lastName;
-    return f;
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
 }
 
-console.log(printTeacher("John", "Doe")); // 
+// Define the function (NOT anonymous, NO destructuring)
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
+}
 
-let printTeacher2: printTeacherFunction;
-printTeacher2 = function(firstName: string, lastName: string): string {
-    return `${firstName.charAt(0)}. ${lastName}`;
-    }
-console.log(printTeacher("John", "Doe"));
-console.log(printTeacher2("Jane", "Smith"));
-const teacher: Teacher = {
-    firstName: "John",
-    lastName: "Doe",
-    fullTimeEmployee: true,
-    location: "New York",
-    contract: false
-};
-console.log(teacher);
-const director: Directors = {
-    firstName: "Jane",
-    lastName: "Smith",
-    fullTimeEmployee: true,
-    location: "Los Angeles",
-    numberOfReports: 5
-};
-console.log(director);
-export { printTeacher, Teacher, Directors, printTeacherFunction };
+// Example usage
+const teacherName: printTeacherFunction = printTeacher;
+console.log(teacherName("John", "Doe")); // J. Doe
+// let printTeacher2: printTeacherFunction;
+// printTeacher2 = function(firstName: string, lastName: string): string {
+//     return `${firstName.charAt(0)}. ${lastName}`;
+//     }
+// console.log(printTeacher("John", "Doe"));
+// console.log(printTeacher2("Jane", "Smith"));
+// const teacher: Teacher = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     fullTimeEmployee: true,
+//     location: "New York",
+//     contract: false
+// };
+// console.log(teacher);
+// const director: Directors = {
+//     firstName: "Jane",
+//     lastName: "Smith",
+//     fullTimeEmployee: true,
+//     location: "Los Angeles",
+//     numberOfReports: 5
+// };
+// console.log(director);
+// export { printTeacher, Teacher, Directors, printTeacherFunction };
