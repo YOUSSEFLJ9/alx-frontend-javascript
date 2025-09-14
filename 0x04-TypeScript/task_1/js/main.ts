@@ -20,12 +20,26 @@ function printTeacher(firstName: string, lastName: string): string {
         (firstName: string, lastName: string): string;
         
 }
-
-const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  location: 'London',
-  fullTimeEmployee: true,
-  numberOfReports: 17,
+let printTeacher2: printTeacherFunction;
+printTeacher2 = function(firstName: string, lastName: string): string {
+    return `${firstName.charAt(0)}. ${lastName}`;
+    }
+console.log(printTeacher("John", "Doe"));
+console.log(printTeacher2("Jane", "Smith"));
+const teacher: Teacher = {
+    firstName: "John",
+    lastName: "Doe",
+    fullTimeEmployee: true,
+    location: "New York",
+    contract: false
 };
-console.log(director1);
+console.log(teacher);
+const director: Directors = {
+    firstName: "Jane",
+    lastName: "Smith",
+    fullTimeEmployee: true,
+    location: "Los Angeles",
+    numberOfReports: 5
+};
+console.log(director);
+export { printTeacher, Teacher, Directors, printTeacherFunction };
